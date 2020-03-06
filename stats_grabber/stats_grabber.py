@@ -16,7 +16,10 @@ class StatsGrabber():
             api_key {str} -- Unique API key to initialize the StatsGrabber class
         """
         self.__api_key = api_key
-        self.watcher = LolWatcher(api_key)
+        try:
+            self.watcher = LolWatcher(api_key)
+        except ApiError as e:
+            print(f'Raised ApiError. Perhaps API Key is wrong? {e}')
     
     def _get_summoner_data(self, name, region):
         return self.watcher.summoner.by_name(region, name)
