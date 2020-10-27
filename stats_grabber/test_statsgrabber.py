@@ -4,7 +4,7 @@ import stats_grabber
 class TestStatsGrabber(unittest.TestCase):
 
     def setUp(self):
-        self.grabber = stats_grabber.StatsGrabber('RGAPI-478416b7-f547-416d-b4d2-440d9a356946')
+        self.grabber = stats_grabber.StatsGrabber('RGAPI-478416b7-f547-416d-b4d2-440d9a356946') # Deprecated Key. Don't worry :)
         self.unranked_games = self.grabber.get_unranked_games('CrystalJayde')
         self.ranked_games = self.grabber.get_ranked_games('CrystalJayde')
         self.assertIsNotNone(self.grabber)
